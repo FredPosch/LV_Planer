@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Lecture Planning Tool</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+  <h1 style="text-align: center;">Update List</h1>
+
+  <div>
+    <form action="/update/{{task.id}}", method="POST">
+        <input type="text" name="Code_LV" id="Code_LV" value="{{task.Code_LV}}">
+        <input type="submit" value="Add Course">
+      </form>
+  </div>
+  
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Lecture Planning Tool</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+  <h1 style="text-align: center;">My Calendar</h1>
+
+  <div>
+    <a href="/download_calendar" download>
+      <button type="button">Download Calendar</button>
+    </a>
+    <a href="/go_to_main_page">
+        <button type="button">Go to Main Page</button>
+    </a>
+  </div>
+  
+</div>
+{% endblock %}

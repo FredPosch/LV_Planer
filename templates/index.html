@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Lecture Planning Tool</title>
+{% endblock %}
+
+{% block body %}
+<div class="hero">
+  <div class="content">
+    <h1 style="text-align: center;">Lecture Planning Tool</h1>
+
+    <table>
+      <tr>
+        <th>Course</th>
+        <th>Added</th>
+        <th>Actions</th> 
+      </tr>
+      {% for task in tasks %}
+        <tr>
+          <td> {{ task.Code_LV }}</td>
+          <td> {{ task.date_created.date() }}</td>
+          <td>
+            <a href="/delete/{{ task.id }}">Delete</a>
+            <br>
+            <a href="/update/{{ task.id }}">Update</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+    <form action="/" method="POST">
+      <input type="text" name="Code_LV" id="Code_LV">
+      <input type="submit" value="Add Course">
+    </form>
+
+    <div class="button-container">
+      <form action="/create_calendar" method="post">
+        <button type="submit">Create Calendar</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
